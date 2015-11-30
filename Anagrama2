@@ -1,0 +1,24 @@
+package entrega9;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Anagrama {
+	public static boolean eAnagrama(String word1, String word2) {
+		word2=word2.toLowerCase();
+		word1=word1.toLowerCase();
+		int conta=0;
+		
+		List<Character>list1=new ArrayList<Character>();
+		List<Character>list2=new ArrayList<Character>();
+		for(char c:word1.replace(" ", "").toCharArray())
+		{
+			list1.add(c);
+		}
+		for(char c:word2.replace(" ", "").toCharArray())
+		{
+			list2.add(c);
+		}
+		return list1.containsAll(list2) && list1.size()==list2.size();
+		}
+}
